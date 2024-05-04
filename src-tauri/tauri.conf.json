@@ -3,7 +3,8 @@
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
-    "distDir": "../dist"
+    "distDir": "../dist",
+    "withGlobalTauri": false
   },
   "package": {
     "productName": "storm-n-tracs-editor",
@@ -11,26 +12,19 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false,
-      "shell": {
-        "all": false,
-        "open": true
+      "fs":{
+        "readFile": true,
+        "writeFile": true
+      },
+      "dialog": {
+        "open": true,
+        "save": true
       }
-    },
-    "windows": [
-      {
-        "title": "storm-n-tracs-editor",
-        "width": 800,
-        "height": 600
-      }
-    ],
-    "security": {
-      "csp": null
     },
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "io.github.nona-takahara",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -38,6 +32,18 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ]
-    }
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "storm-n-tracs-editor",
+        "width": 800,
+        "height": 600
+      }
+    ]
   }
 }
