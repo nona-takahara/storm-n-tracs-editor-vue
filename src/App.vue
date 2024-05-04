@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Application } from 'vue3-pixi'
-import Demo from "./components/demo.vue";
+import Demo from "./components/Demo.vue";
 
 </script>
 
