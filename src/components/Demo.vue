@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import type { GraphicsInst } from "vue3-pixi";
+import { useWindowSize } from "@vueuse/core";
+
+const { width, height } = useWindowSize();
 
 function drawArc(e: GraphicsInst) {
   e.beginFill("#4f455c");
@@ -8,5 +11,5 @@ function drawArc(e: GraphicsInst) {
 </script>
 
 <template>
-  <graphics :x="300" :y="300" @render="drawArc" />
+  <Graphics :x="width - 200" :y="height - 200" @render="drawArc" />
 </template>
